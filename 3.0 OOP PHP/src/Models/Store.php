@@ -1,23 +1,33 @@
 <?php
-#start_here
-#do classes have access modifiers in php
 
-#packages
-namespace OOP\Classing;
+/**
+SERIOUSPROJ
+ -> Storing stuff in the DB (Database) : Models
+ -> Logic of the application (Logic) : Controllers
+ -> Look and feel (Presentation)
+ -> Configuration (Config)
+ -> API(Messages) (External)
+**/
+namespace src\Models;
 
 class Store{
 
     #name of our CSV, defined as a constant
-    const DB_FILE = 'student_data_0.csv';
+    const DB_FILE = '../../student_data_0.csv';
 
     #read_writer - holds the resource to the csv
     private $read_writer = false;
 
+  //  public $dummy = 'no';
 
     function __construct(){
-        //nothing here
+      //  $this->dummy = 'Never';
+    //    $this->fictitious();
     }
 
+    //function fictitious(){
+    //  return 'Yes';
+    //}
     /**
       Open the read_writer resource
      * @param string $mode
@@ -64,6 +74,7 @@ class Store{
      */
     public function getOne($index){
         $rows = $this->getAll();
+
         if ( $index >= count($rows) ){
             return false;
             #throw new \InvalidArgumentException("Row specified does not exist");
@@ -81,7 +92,7 @@ class Store{
      */
     public function update($arrayOfRows){
 
-        $this->openReadWriter('w');
+        $this->openReadWriter('a');
 
         if(is_array($arrayOfRows)){
             foreach ($arrayOfRows as $field) {

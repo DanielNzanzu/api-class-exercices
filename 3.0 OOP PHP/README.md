@@ -1,4 +1,4 @@
-# Git practice 🙌
+# OOP PHP 🙌
 
 <img src='../resources/images/oop.jpeg' alt="oop">
 
