@@ -7,4 +7,4 @@
 - Reading config values from file
 - Connecting to Database using MySQLi
 - CRUD
-- (....)
+- ORMs

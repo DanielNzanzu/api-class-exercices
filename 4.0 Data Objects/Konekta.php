@@ -29,7 +29,10 @@ class Konekta{
 
   public function getConfig(){
 
-    $config_string = file_get_contents('config.json');
+    $config_relative_path ='config.json';
+    $config_absolute_path = __DIR__.'/config.json';
+
+    $config_string = file_get_contents($config_absolute_path);
 
     $config_object = json_decode($config_string);
 
@@ -37,7 +40,3 @@ class Konekta{
   }
 
 }
-
-$kn = new Konekta();
-
-var_dump($kn->konn);
